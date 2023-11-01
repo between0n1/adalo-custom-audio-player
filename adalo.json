@@ -5,7 +5,7 @@
   "displayName": "LB Audio Player",
   "components": [
     {
-      "name": "LBAudioPlayer",
+      "name": "CustomAudioPlayer",
       "manifest": "./src/components/AudioPlayer/manifest.json"
     }
   ],

@@ -7,7 +7,7 @@ Number.prototype.round = function(places) {
   return +(Math.round(this + 'e+' + places) + 'e-' + places)
 }
 
-class AudioPlayer extends Component {
+class CustomAudioPlayer extends Component {
   constructor(props) {
     super(props)
     const { url, title, subtitle, artwork } = props
@@ -484,4 +484,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default AudioPlayer
+export default CustomAudioPlayer

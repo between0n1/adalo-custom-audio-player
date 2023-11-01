@@ -8,7 +8,7 @@
   "props": [
     {
       "name": "url",
-      "displayName": "URL temp",
+      "displayName": "URL of the Song",
       "type": "text"
     },
     {
@@ -55,7 +55,7 @@
     },
     {
       "name": "isPlaying",
-      "displayName": "Is Audio Playing?",
+      "displayName": "Is Audio Playing (0 or 1)?",
       "type": "text"
     }
   ],
