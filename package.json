@@ -1,6 +1,6 @@
 {
   "name": "LB-audio-player",
-  "version": "1.5.15",
+  "version": "1.5.17",
   "license": "MIT",
   "author": "Littlebeat",
   "main": "index.js",
