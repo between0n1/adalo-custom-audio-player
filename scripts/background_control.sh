@@ -4,11 +4,11 @@ set -x
 
 project_path=$(pwd)
 
-# sed -i.bak "/import {name as appName}/a\\
-# import TrackPlayer from \"react-native-track-player\";" index.js
+sed -i.bak "/import {name as appName}/a\\
+import TrackPlayer from \"react-native-track-player\";" index.js
 
 sed -i.bak "/registerComponent/a\\
 TrackPlayer.registerPlaybackService(() =>\
-  require('./node_modules/@adalo/LB-audio-player/src/components/AudioPlayer/service.js'),\
+  require('./node_modules/LB-audio-player/src/components/AudioPlayer/service.js'),\
 );
 " index.js
