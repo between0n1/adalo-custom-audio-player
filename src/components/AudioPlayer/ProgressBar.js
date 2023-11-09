@@ -189,6 +189,7 @@ const ProgressBar = props => {
   const trackLength = width - padding * 2
   const timeFontStyles = {
     fontFamily: _fonts.body,
+    color: '#ffffff',
   }
 
   return (
@@ -221,8 +222,22 @@ const ProgressBar = props => {
             />
           </View>
           <View style={styles.timeText}>
-            <Text style={timeFontStyles}>{playedFormatted}</Text>
-            <Text style={timeFontStyles}>{durationFormatted}</Text>
+            <Text
+              style={{
+                fontFamily: _fonts.body,
+                color: '#ffffff',
+              }}
+            >
+              {playedFormatted}
+            </Text>
+            <Text
+              style={{
+                fontFamily: _fonts.body,
+                color: '#ffffff',
+              }}
+            >
+              {durationFormatted}
+            </Text>
           </View>
         </View>
       )}

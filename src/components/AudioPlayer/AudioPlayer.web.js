@@ -9,19 +9,19 @@ export default class AudioPlayerSub extends Component {
   }
 
   componentDidMount() {
-    this.player.addEventListener('timeupdate', (e) => {
+    this.player.addEventListener('timeupdate', e => {
       const { updatePlayed, updateProgress } = this.props
       const { duration, currentTime } = e.target
       updatePlayed(currentTime)
       const progress = currentTime / duration
       updateProgress(progress)
     })
-    this.player.addEventListener('durationchange', (e) => {
+    this.player.addEventListener('durationchange', e => {
       const { duration } = e.target
       const { updateDuration } = this.props
       updateDuration(duration)
     })
-    this.player.addEventListener('error', (e) => {
+    this.player.addEventListener('error', e => {
       console.error('Audio player error!!! ', e.target.error)
       this.player.src = ''
     })
@@ -84,9 +84,14 @@ export default class AudioPlayerSub extends Component {
     }
   }
 
-  addUrl = (url) => {
-    const { updatePlayable, updatePlaying, autoplay, editor, topScreen } =
-      this.props
+  addUrl = url => {
+    const {
+      updatePlayable,
+      updatePlaying,
+      autoplay,
+      editor,
+      topScreen,
+    } = this.props
     updatePlayable(false)
     let testSound = new Audio(url)
     try {
@@ -110,7 +115,7 @@ export default class AudioPlayerSub extends Component {
     this.setState({ seeking: true, seekingValue: progress })
   }
   // When the user changes the value but hasn't let go of the slider yet
-  seekChange = (values) => {
+  seekChange = values => {
     this.setState({ seekingValue: values[0] })
   }
   // User has let go of the slider
@@ -125,7 +130,7 @@ export default class AudioPlayerSub extends Component {
     this.player.currentTime = newTime
   }
 
-  seek = (newProgress) => {
+  seek = newProgress => {
     const { duration } = this.props
     const newTime = newProgress * duration
     this.player.currentTime = newTime
@@ -188,11 +193,12 @@ export default class AudioPlayerSub extends Component {
     const trackLength = width - padding * 2
     const timeFontStyles = {
       fontFamily: _fonts.body,
+      color: 'white',
     }
 
     return (
       <View style={(styles.wrapper, paddingStyles)}>
-        <audio ref={(ref) => (this.player = ref)} />
+        <audio ref={ref => (this.player = ref)} />
         <View style={styles.seekBar}>
           <MultiSlider
             enabledOne
